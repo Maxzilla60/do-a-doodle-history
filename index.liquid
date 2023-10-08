@@ -1,0 +1,27 @@
+---
+title: 🏠 Welcome 🏠
+layout: home.layout.liquid
+---
+<div class="welcome" style="font-size: larger; font-weight: bold; text-align: center;">
+    <p>
+        Welcome to the archive of past Do-A-Doodle prompts
+        <br/>from the
+        <a href="https://www.patreon.com/zedaphplays" target="_blank" rel="noopener noreferrer">Zedaph Patreon Discord</a>.
+    </p>
+    <p>
+        Note that this is only a collection of the prompts and their announcement blurbs, not an archive of the actual submissions.
+    </p>
+    <p>
+        We've done {{ collections.prompt | prompt-amount }} prompts so far!
+    </p>
+</div>
+<hr/>
+
+{% assign recentThree = collections.prompt | prompt-recent-three %}
+{% for prompt in recentThree %}
+    <article>
+        <h1><a href="{{ prompt.url }}">{{ prompt.date | date: "%B %Y" }} - {{ prompt.data.title }}</a></h1>
+        <small>Number of Submissions: {{ prompt.data.submissions-count | emoji-number }}</small>
+        <p>{{ prompt.content }}</p>
+    </article>
+{% endfor %}

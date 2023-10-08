@@ -1,0 +1,23 @@
+---
+title: 📅 Calendar View
+layout: home.layout.liquid
+css: calendar
+---
+{% assign calendarGroup = collections.prompt | prompt-calendar-group %}
+{% for yearEntry in calendarGroup %}
+    <h1>{{ yearEntry.year }}</h1>
+    <ul>
+        {% for monthEntry in yearEntry.months %}
+            <li>
+                <div class="month">{{ monthEntry.month }}</div>
+                <div class="prompt">
+                    {% if monthEntry.prompt.data.skipped == false %}
+                        <a href="{{ monthEntry.prompt.url }}">{{ monthEntry.prompt.data.title }}</a>
+                    {% else %}
+                        <i>{{ monthEntry.prompt.data.title }}</i>
+                    {% endif %}
+                </div>
+            </li>
+        {% endfor %}
+    </ul>
+{% endfor %}

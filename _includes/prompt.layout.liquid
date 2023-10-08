@@ -1,0 +1,15 @@
+---
+layout: home.layout.liquid
+css: prompt
+---
+<article>
+    <h1>{{ date | date: "%B %Y" }} - {{ title }}</h1>
+    <div style="text-align: center">Number of Submissions: {{ submissions-count | emoji-number }}</div>
+    <hr/>
+    <section style="font-size: large">
+        {{ content }}
+        {% for img in images %}
+            <img src="/public/prompt-images/{{ img }}"/>
+        {% endfor %}
+    </section>
+</article>

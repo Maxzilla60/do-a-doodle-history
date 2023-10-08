@@ -1,0 +1,53 @@
+header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+    margin-top: 5px;
+}
+
+header img {
+    width: 450px;
+    border: none;
+}
+
+header > h1 {
+    margin: 0;
+}
+
+a:visited {
+    color: purple;
+}
+
+nav {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+main {
+    max-width: 850px;
+    margin: auto;
+    overflow-x: auto;
+}
+
+small {
+    display: block;
+    text-align: center;
+}
+
+.welcome {
+    padding: 5px;
+    background-color: hsl(30 90% 90% / 1);
+}
+
+h1, h2 {
+    text-align: center;
+}
+
+a {
+    color: darkblue;
+}
+
+i {
+    color: hsl(0 0% 50% / 1);
+}

@@ -1,0 +1,45 @@
+table {
+    width: 100%;
+}
+
+thead, tbody {
+    display: inline;
+}
+
+tr {
+    padding: 5px;
+}
+
+th, td {
+    text-align: left;
+    padding: 0.25em;
+}
+
+th.date, td.date {
+    flex: 1;
+}
+
+th.prompt, td.prompt {
+    flex: 3;
+}
+
+th.submissions, td.submissions {
+    flex: 1;
+    text-align: right;
+    font-weight: bold;
+}
+
+tr {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+tr:not(:last-child) {
+    border-bottom: 1px solid #DDD;
+}
+
+tr.year, thead > tr {
+    background-color: hsl(30 90% 90% / 1);
+    border-bottom: 1px solid #3c3c3c;
+}

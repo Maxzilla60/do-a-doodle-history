@@ -1,0 +1,34 @@
+---
+title: 🗄️ Table View
+layout: home.layout.liquid
+css: table
+---
+{% assign tableGroup = collections.prompt | prompt-table-group %}
+<table>
+    {% for yearEntry in tableGroup %}
+    <thead>
+    <tr>
+        <th class="date">📅 {{ yearEntry.year }}</th>
+        <th class="prompt">💬 Prompt</th>
+        <th class="submissions">🗳️ Submissions</th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for monthEntry in yearEntry.months %}
+        <tr>
+            <td class="date">{{ monthEntry.month }}</td>
+            <td class="prompt">
+                {% if monthEntry.prompt.data.skipped == false %}
+                    <a href="{{ monthEntry.prompt.url }}">
+                        {{ monthEntry.prompt.data.title }}
+                    </a>
+                {% else %}
+                    <i>{{ monthEntry.prompt.data.title }}</i>
+                {% endif %}
+            </td>
+            <td class="submissions">{{ monthEntry.prompt.data.submissions-count }}</td>
+        </tr>
+    {% endfor %}
+    {% endfor %}
+    </tbody>
+</table>

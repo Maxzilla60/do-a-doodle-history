@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>🎨 Do-A-Doodle Prompt History 🎨 - {{ title }}</title>
+    <link rel="stylesheet" href="/public/css/doodle.css"/>
+    <link rel="stylesheet" href="/public/css/styles.css"/>
+    {% if css %}
+        <link rel="stylesheet" href="/public/css/{{ css }}.css"/>
+    {% endif %}
+</head>
+<body>
+    <header>
+        <a href="/"><img id="logo" src="/public/DaD_Logo.png" alt="Do-A-Doodle"/></a>
+        <h1>Prompt History</h1>
+    </header>
+    <main>
+        {% renderFile "./_includes/nav.11ty.js" %}
+        <hr/>
+        {{ content }}
+    </main>
+</body>
+<script defer>
+	const today = new Date();
+	if (today.getMonth() === 9) {
+		document.getElementById('logo').src = '/public/DaD_Logo_October.png';
+	}
+</script>
+</html>
