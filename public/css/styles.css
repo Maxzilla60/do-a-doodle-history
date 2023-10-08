@@ -19,6 +19,10 @@ a:visited {
     color: purple;
 }
 
+a:not([href]) {
+    color: hsl(0 0% 50% / 1);
+}
+
 nav {
     display: flex;
     justify-content: space-evenly;
