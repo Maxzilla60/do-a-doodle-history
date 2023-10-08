@@ -42,6 +42,9 @@ small {
 .welcome {
     padding: 5px;
     background-color: hsl(30 90% 90% / 1);
+    font-size: larger;
+    font-weight: bold;
+    text-align: center;
 }
 
 h1, h2 {
