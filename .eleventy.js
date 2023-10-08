@@ -58,7 +58,7 @@ function emojiNumber(number) {
 }
 
 function promptsAmount(prompts) {
-	return emojiNumber(prompts.filter(p => !p.data.skipped).length);
+	return emojiNumber(prompts.filter(p => p.data.permalink).length);
 }
 
 function recentThree(prompts) {

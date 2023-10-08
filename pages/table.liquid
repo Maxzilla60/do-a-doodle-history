@@ -21,7 +21,7 @@ order: 3
         <tr>
             <td class="date">{{ monthEntry.month }}</td>
             <td class="prompt">
-                {% if monthEntry.prompt.data.skipped == false %}
+                {% if monthEntry.prompt.data.permalink != false %}
                     <a href="{{ monthEntry.prompt.url }}">
                         {{ monthEntry.prompt.data.title }}
                     </a>

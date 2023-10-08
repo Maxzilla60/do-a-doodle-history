@@ -3,7 +3,6 @@
 	"permalink": "/prompts/{{ page.fileSlug }}/",
 	"title": "N/A",
 	"submissions-count": 0,
-	"skipped": false,
 	"layout": "prompt.layout.liquid",
 	"images": []
 }
