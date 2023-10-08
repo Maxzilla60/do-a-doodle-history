@@ -10,6 +10,12 @@ module.exports = (eleventy) => {
 	eleventy.setLibrary('md', markdownIt({
 		linkify: true,
 	}));
+	// Custom sorting for pages (nav) collection
+	eleventy.addCollection('nav', function (collection) {
+		return collection
+			.getFilteredByTag('nav')
+			.sort((a, b) => a.data.order - b.data.order);
+	});
 	// Add shortcodes & filters
 	eleventy.addFilter('emoji-number', emojiNumber);
 	eleventy.addFilter('prompt-amount', promptsAmount);

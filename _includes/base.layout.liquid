@@ -15,7 +15,15 @@
         <h1>Prompt History</h1>
     </header>
     <main>
-        {% renderFile "./_includes/nav.11ty.js" %}
+        <nav>
+            {% for nav in collections.nav %}
+                {% if page.url == nav.url %}
+                    <a>{{ nav.data.title }}</a>
+                {% else %}
+                    <a href="{{ nav.url }}">{{ nav.data.title }}</a>
+                {% endif %}
+            {% endfor %}
+        </nav>
         <hr/>
         {{ content }}
     </main>
