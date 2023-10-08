@@ -1,0 +1,9 @@
+<nav>
+    {% for nav in collections.nav %}
+        {% if page.url == nav.url %}
+            <a>{{ nav.data.title }}</a>
+        {% else %}
+            <a href="{{ nav.url }}">{{ nav.data.title }}</a>
+        {% endif %}
+    {% endfor %}
+</nav>
