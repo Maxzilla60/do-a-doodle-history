@@ -3,6 +3,8 @@ title: 📅 Calendar View
 css: calendar
 order: 2
 ---
+<div class="info">sorted from oldest to newest</div>
+
 {% assign calendarGroup = collections.prompt | prompt-calendar-group %}
 {% for yearEntry in calendarGroup %}
     <h1>{{ yearEntry.year }}</h1>
