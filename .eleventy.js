@@ -20,8 +20,8 @@ module.exports = (eleventy) => {
 	eleventy.addFilter('emoji-number', emojiNumber);
 	eleventy.addFilter('prompt-amount', promptsAmount);
 	eleventy.addFilter('prompt-recent-three', recentThree);
-	eleventy.addFilter('prompt-calendar-group', (prompts) => groupPrompts(prompts, false));
-	eleventy.addFilter('prompt-table-group', (prompts) => groupPrompts(prompts, true));
+	eleventy.addFilter('prompt-calendar-group', groupPromptsForCalendar);
+	eleventy.addFilter('prompt-table-group', groupPromptsForTable);
 };
 
 function emojiNumber(number) {
@@ -68,7 +68,37 @@ function recentThree(prompts) {
 		.slice(0, 3);
 }
 
-function groupPrompts(prompts, reversed = false) {
+function groupPromptsForCalendar(prompts) {
+	function getMonth(date) {
+		return date.toLocaleString('default', { month: 'long' });
+	}
+
+	return _groupPrompts(prompts, getMonth);
+}
+
+function groupPromptsForTable(prompts) {
+	function getMonth(date) {
+		return date
+			.toLocaleString('default', { month: 'long' })
+			.toUpperCase()
+			.slice(0, 3);
+	}
+
+	const grouped = _groupPrompts(prompts, getMonth);
+
+	for (const yearEntry of grouped) {
+		yearEntry.months.reverse();
+	}
+	grouped.reverse();
+
+	return grouped;
+}
+
+function _groupPrompts(prompts, getMonth) {
+	function getYear(date) {
+		return date.toLocaleString('default', { year: 'numeric' });
+	}
+
 	const grouped = [];
 	for (const prompt of prompts) {
 		const year = getYear(prompt.page.date);
@@ -90,20 +120,5 @@ function groupPrompts(prompts, reversed = false) {
 			});
 		}
 	}
-
-	if (reversed) {
-		for (const yearEntry of grouped) {
-			yearEntry.months.reverse();
-		}
-		grouped.reverse();
-	}
 	return grouped;
-
-	function getYear(date) {
-		return date.toLocaleString('default', { year: 'numeric' });
-	}
-
-	function getMonth(date) {
-		return date.toLocaleString('default', { month: 'long' });
-	}
 }
