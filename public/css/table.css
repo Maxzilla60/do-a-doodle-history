@@ -50,3 +50,32 @@ tr.year, thead > tr {
     background-color: hsl(30 90% 90% / 1);
     border-bottom: 1px solid #3c3c3c;
 }
+
+@media (min-width: 1000px) {
+    .info {
+        padding: 0.5vw;
+    }
+
+    table {
+        font-size: 1.2em;
+    }
+
+    thead * {
+        font-size: 0.8em;
+    }
+
+    tr {
+        padding-left: 0.5vw;
+        padding-right: 0.5vw;
+    }
+
+    th.date, td.date {
+        flex: 0.6;
+    }
+
+    th.submissions {
+        flex: 1;
+        text-align: right;
+        font-weight: bold;
+    }
+}

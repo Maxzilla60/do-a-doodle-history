@@ -37,3 +37,31 @@ li:not(:last-child) {
 .prompt {
     font-size: 1.3em;
 }
+
+@media (min-width: 1000px) {
+    .info {
+        padding: 0.5vw;
+    }
+
+    ul {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr;
+        gap: 3px 3px;
+        grid-template-areas:
+            ". . . ."
+            ". . . ."
+            ". . . .";
+
+        flex-flow: unset;
+    }
+
+    li {
+        padding: 0;
+        margin: 0;
+    }
+
+    li:not(:last-child) {
+        margin-bottom: 0;
+    }
+}

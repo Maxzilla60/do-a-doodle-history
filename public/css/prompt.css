@@ -29,3 +29,27 @@ small {
 p {
     margin: 2vh 5vw;
 }
+
+@media (min-width: 1000px) {
+    article {
+        display: flex;
+        flex-direction: column;
+    }
+
+    article > hr {
+        width: 100%;
+    }
+
+    p {
+        margin: 0 3vw 2vh;
+    }
+
+    p:first-of-type {
+        margin-top: 1vh;
+    }
+
+    img {
+        margin-left: 3vw;
+        margin-right: 3vw;
+    }
+}

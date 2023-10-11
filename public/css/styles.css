@@ -90,3 +90,35 @@ a {
 i {
     color: hsl(0 0% 50% / 1);
 }
+
+@media (min-width: 1000px) {
+    * {
+        font-size: 16pt;
+    }
+
+    body {
+        width: 50vw;
+        margin: auto;
+    }
+
+    header img {
+        width: 600px;
+    }
+
+    header > h1 {
+        font-size: 2em;
+    }
+
+    nav {
+        flex-flow: row;
+        justify-content: space-evenly;
+    }
+
+    h1, h2 {
+        font-size: 1.5em;
+    }
+
+    article {
+        padding: 0 30px;
+    }
+}
