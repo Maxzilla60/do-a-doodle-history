@@ -114,8 +114,9 @@ i {
         justify-content: space-evenly;
     }
 
-    h1, h2 {
+    h1 {
         font-size: 1.5em;
+        margin: 1vh 0 1vh;
     }
 
     article {
