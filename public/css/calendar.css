@@ -1,30 +1,39 @@
+.info {
+    font-size: 0.8em;
+    padding: 2.5vw;
+}
+
+main > h1 {
+    font-size: 1.5em;
+    background-color: hsl(30 90% 90% / 1);
+}
+
 ul {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr;
-    gap: 0px 0px;
-    grid-template-areas:
-    ". . . ."
-    ". . . ."
-    ". . . .";
+    display: flex;
+    flex-flow: column;
 
     padding: 0;
-}
-
-.date {
-    color: hsl(0 0% 50% / 1);
-    margin: 0;
-    margin-bottom: 5px;
-}
-
-.prompt {
-    font-size: larger;
 }
 
 li {
     display: block;
     border: #3c3c3c solid 10px;
-    padding: 5px;
+    padding: 1vh;
+    margin: 0 2vw;
     text-align: center;
     border-image: url(button.svg) 10 10 10 10 stretch stretch;
+}
+
+li:not(:last-child) {
+    margin-bottom: 1vh;
+}
+
+.month {
+    font-size: 1em;
+    color: hsl(0 0% 50% / 1);
+    margin: 0 0 1vh;
+}
+
+.prompt {
+    font-size: 1.3em;
 }

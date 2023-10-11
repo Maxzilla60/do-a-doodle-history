@@ -1,17 +1,22 @@
+* {
+    font-size: 1em;
+}
+
 header {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-bottom: 20px;
-    margin-top: 5px;
+    margin-bottom: 1vh;
+    margin-top: 1vh;
 }
 
 header img {
-    width: 450px;
+    width: 90vw;
     border: none;
 }
 
 header > h1 {
+    font-size: 1em;
     margin: 0;
 }
 
@@ -25,28 +30,56 @@ a:not([href]) {
 
 nav {
     display: flex;
-    justify-content: space-evenly;
+    flex-flow: column;
+}
+
+nav > a {
+    font-size: 0.9em;
+    text-align: center;
+    margin-bottom: 1vh;
 }
 
 main {
-    max-width: 850px;
-    margin: auto;
+    margin: auto auto 25vh;
     overflow-x: auto;
 }
 
+hr {
+    margin-top: 0;
+    margin-bottom: 1vh;
+}
+
+article {
+    padding: 0 5vw;
+}
+
 small {
+    font-size: 0.7em;
     display: block;
     text-align: center;
+    margin-bottom: 2vh;
 }
 
 .info {
-    padding: 5px 20px;
+    font-size: 1.1em;
+    padding: 2vh;
+    margin-bottom: 1vh;
     background-color: hsl(30 90% 90% / 1);
-    font-size: larger;
     text-align: center;
 }
 
-h1, h2 {
+.info > p:not(:last-child) {
+    margin-top: 0;
+    margin-bottom: 2vh;
+}
+
+.info > p:last-child {
+    margin-bottom: 0;
+}
+
+h1 {
+    font-size: 1.2em;
+    margin: 2.5vh 0 1vh;
     text-align: center;
 }
 

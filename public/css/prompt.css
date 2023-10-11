@@ -1,0 +1,31 @@
+article {
+    padding: 0;
+}
+
+article > h1 {
+    margin: 0;
+}
+
+small {
+    margin-bottom: 1vh;
+}
+
+p {
+    margin: 2vh 5vw;
+}
+
+article {
+    padding: 0;
+}
+
+article > h1 {
+    margin: 0;
+}
+
+small {
+    margin-bottom: 1vh;
+}
+
+p {
+    margin: 2vh 5vw;
+}

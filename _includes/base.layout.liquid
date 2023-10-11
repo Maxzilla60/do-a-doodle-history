@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>🎨 Do-A-Doodle Prompt History 🎨 - {{ title }}</title>
     <link rel="stylesheet" href="/public/css/doodle.css"/>
     <link rel="stylesheet" href="/public/css/styles.css"/>
@@ -14,9 +15,10 @@
         <a href="/"><img id="logo" src="/public/DaD_Logo.png" alt="Do-A-Doodle"/></a>
         <h1>Prompt History</h1>
     </header>
+    <hr/>
+    {% include "./menu" %}
+    <hr/>
     <main>
-        {% include "./menu" %}
-        <hr/>
         {{ content }}
     </main>
 </body>
