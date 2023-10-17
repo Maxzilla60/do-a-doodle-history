@@ -36,6 +36,7 @@ li:not(:last-child) {
 
 .prompt {
     font-size: 1.3em;
+    min-height: 3.9em;
 }
 
 @media (min-width: 1000px) {
