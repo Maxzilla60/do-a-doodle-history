@@ -1,5 +1,6 @@
 ---
 title: What are the nerdy details of this website?
+order: 4
 ---
 - A static site built with [Eleventy](https://www.11ty.dev)
 - Hosted for free on [Glitch](https://glitch.com)

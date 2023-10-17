@@ -11,11 +11,9 @@ module.exports = (eleventy) => {
 		linkify: true,
 	}));
 	// Custom sorting for pages (nav) collection
-	eleventy.addCollection('nav', function (collection) {
-		return collection
-			.getFilteredByTag('nav')
-			.sort((a, b) => a.data.order - b.data.order);
-	});
+	eleventy.addCollection('nav', sortByOrderField('nav'));
+	// Custom sorting for questions (faq) collection
+	eleventy.addCollection('faq', sortByOrderField('faq'));
 	// Add shortcodes & filters
 	eleventy.addFilter('emoji-number', emojiNumber);
 	eleventy.addFilter('prompt-amount', promptsAmount);
@@ -23,6 +21,14 @@ module.exports = (eleventy) => {
 	eleventy.addFilter('prompt-calendar-group', groupPromptsForCalendar);
 	eleventy.addFilter('prompt-table-group', groupPromptsForTable);
 };
+
+function sortByOrderField(tagName) {
+	return function (collection) {
+		return collection
+			.getFilteredByTag(tagName)
+			.sort((a, b) => a.data.order - b.data.order);
+	};
+}
 
 function emojiNumber(number) {
 	function digitToEmoji(digit) {
