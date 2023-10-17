@@ -1,0 +1,8 @@
+---
+title: ❓ About
+order: 4
+---
+{% for question in collections.faq %}
+    <h1>{{ question.data.title }}</h1>
+    {{ question.content }}
+{% endfor %}
