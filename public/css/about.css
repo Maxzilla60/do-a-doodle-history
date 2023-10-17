@@ -1,0 +1,24 @@
+main h1 {
+    padding: 0.5vh;
+    background-color: hsl(30 90% 90% / 1);
+}
+
+main h1:first-of-type {
+    margin-top: 0;
+}
+
+ul, p {
+    margin-left: 5vw;
+    margin-right: 5vw;
+}
+
+ul {
+    padding-left: 1em;
+}
+
+@media (min-width: 1000px) {
+    ul, p {
+        margin-left: 1vw;
+        margin-right: 1vw;
+    }
+}
