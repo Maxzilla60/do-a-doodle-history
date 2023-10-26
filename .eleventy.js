@@ -76,7 +76,7 @@ function promptsAmount(prompts) {
 
 function recentThree(prompts) {
 	return prompts
-		.filter(a => !a.data.skipped)
+		.filter(p => p.data.permalink)
 		.sort((a, b) => b.date - a.date)
 		.slice(0, 3);
 }
