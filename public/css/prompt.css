@@ -14,20 +14,8 @@ p {
     margin: 2vh 5vw;
 }
 
-article {
-    padding: 0;
-}
-
-article > h1 {
-    margin: 0;
-}
-
 small {
     margin-bottom: 1vh;
-}
-
-p {
-    margin: 2vh 5vw;
 }
 
 @media (min-width: 1000px) {
@@ -48,7 +36,7 @@ p {
         margin-top: 1vh;
     }
 
-    img {
+    article > img {
         margin-left: 3vw;
         margin-right: 3vw;
     }
