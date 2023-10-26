@@ -25,6 +25,7 @@ module.exports = (eleventy) => {
 	eleventy.addFilter('emoji-number', emojiNumber);
 	eleventy.addFilter('prompt-amount', promptsAmount);
 	eleventy.addFilter('prompt-recent-three', recentThree);
+	eleventy.addFilter('prompt-visitable', filterVisitable);
 	eleventy.addFilter('prompt-calendar-group', groupPromptsForCalendar);
 	eleventy.addFilter('prompt-table-group', groupPromptsForTable);
 };
@@ -71,7 +72,7 @@ function emojiNumber(number) {
 }
 
 function promptsAmount(prompts) {
-	return emojiNumber(prompts.filter(p => p.data.permalink).length);
+	return emojiNumber(filterVisitable(prompts).length);
 }
 
 function recentThree(prompts) {
@@ -79,6 +80,10 @@ function recentThree(prompts) {
 		.filter(p => p.data.permalink)
 		.sort((a, b) => b.date - a.date)
 		.slice(0, 3);
+}
+
+function filterVisitable(prompts) {
+	return prompts.filter(p => p.data.permalink);
 }
 
 function groupPromptsForCalendar(prompts) {
