@@ -6,3 +6,4 @@ order: 4
 - Hosted for free on [Glitch](https://glitch.com)
 - Base stylesheet is [Doodle CSS](https://github.com/chr15m/DoodleCSS)
 - Source code can be found on [GitHub](https://github.com/Maxzilla60/do-a-doodle-history)
+- Was last updated on _{{ buildDate }}_
