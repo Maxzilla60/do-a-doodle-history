@@ -18,10 +18,18 @@ small {
     margin-bottom: 1vh;
 }
 
+article > img {
+    margin: 0 5vw;
+}
+
 @media (min-width: 1000px) {
     article {
         display: flex;
         flex-direction: column;
+    }
+
+    article > h1 {
+        font-size: 2em;
     }
 
     article > hr {
