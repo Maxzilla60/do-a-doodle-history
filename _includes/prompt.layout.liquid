@@ -5,6 +5,21 @@ css: prompt
 <article>
     <h1>{{ date | date: "%B %Y" }} - {{ title }}</h1>
     <small>Number of Submissions: {{ submissions-count | emoji-number }}</small>
+    <nav>
+        {% assign previousPrompt = collections.prompt | prompt-visitable | getPreviousCollectionItem %}
+        {% if previousPrompt and previousPrompt.url %}
+            <a title="Previous prompt" href="{{ previousPrompt.url }}">⬅️ {{ previousPrompt.date | date: "%B %Y" }}</a>
+        {% else %}
+            <a title="Previous prompt">⬅️ Previous prompt</a>
+        {% endif %}
+
+        {% assign nextPrompt = collections.prompt | prompt-visitable | getNextCollectionItem %}
+        {% if nextPrompt and nextPrompt.url %}
+            <a title="Next prompt" href="{{ nextPrompt.url }}">{{ nextPrompt.date | date: "%B %Y" }} ➡️</a>
+        {% else %}
+            <a title="Next prompt">Next prompt ➡️</a>
+        {% endif %}
+    </nav>
     <hr/>
     {{ content }}
     {% for img in images %}

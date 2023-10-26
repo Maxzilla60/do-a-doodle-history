@@ -10,6 +10,11 @@ small {
     margin-bottom: 1vh;
 }
 
+article > nav {
+    font-size: 0.7em;
+    justify-content: space-between;
+}
+
 p {
     margin: 2vh 5vw;
 }
