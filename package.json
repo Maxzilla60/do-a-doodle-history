@@ -1,6 +1,6 @@
 {
 	"name": "do-a-doodle-prompt-history",
-	"version": "4.0",
+	"version": "4.1",
 	"scripts": {
 		"start": "npx @11ty/eleventy --serve",
 		"build": "npx @11ty/eleventy"
