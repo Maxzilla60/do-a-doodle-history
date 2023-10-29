@@ -23,6 +23,10 @@ small {
     margin-bottom: 1vh;
 }
 
+blockquote {
+    margin: 2vh 5vw;
+}
+
 article > img {
     margin: 0 5vw;
 }
@@ -47,6 +51,10 @@ article > img {
 
     p:first-of-type {
         margin-top: 1vh;
+    }
+
+    blockquote {
+        margin: revert;
     }
 
     article > img {
