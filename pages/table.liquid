@@ -4,8 +4,6 @@ css: table
 order: 3
 ---
 <div class="info">sorted from newest to oldest</div>
-<br/>
-
 {% assign tableGroup = collections.prompt | prompt-table-group %}
 <table>
     {% for yearEntry in tableGroup %}
