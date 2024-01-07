@@ -1,0 +1,23 @@
+---
+title: 🎲 Random
+order: 4
+---
+<script>
+	const prompts = [
+        {% for prompt in collections.prompt %}
+        {% if prompt.url != false %}
+		'{{ prompt.url }}',
+        {% endif %}
+        {% endfor %}
+	];
+
+	window.location.href = randomChoice(prompts);
+
+	function randomChoice(array) {
+		return array[randomNumber(0, array.length - 1)];
+	}
+
+	function randomNumber(min, max) {
+		return Math.floor(Math.random() * (max - min + 1) + min);
+	}
+</script>
