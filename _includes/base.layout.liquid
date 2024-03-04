@@ -5,6 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="/public/favicon.svg">
     <meta name="theme-color" content="#fce6cf">
+    <title>Do-A-Doodle Prompt History - {{ title }}</title>
+    <link rel="stylesheet" href="/public/css/doodle.css"/>
+    <link rel="stylesheet" href="/public/css/styles.css"/>
+    {% if css %}
+        <link rel="stylesheet" href="/public/css/{{ css }}.css"/>
+    {% endif %}
 
     <!-- Open Graph -->
     <meta property="og:url" content="https://do-a-doodle-history.glitch.me/">
@@ -20,13 +26,6 @@
     <meta property="twitter:description" content="Public archive of all of the Do-A-Doodle prompts from Zedaph's Patreon Discord!">
     <meta property="twitter:image" content="/public/DaD_Unfurl.png">
     <meta property="twitter:card" content="summary_large_image">
-
-    <title>Do-A-Doodle Prompt History - {{ title }}</title>
-    <link rel="stylesheet" href="/public/css/doodle.css"/>
-    <link rel="stylesheet" href="/public/css/styles.css"/>
-    {% if css %}
-        <link rel="stylesheet" href="/public/css/{{ css }}.css"/>
-    {% endif %}
 </head>
 <body>
     <header>
