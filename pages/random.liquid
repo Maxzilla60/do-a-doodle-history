@@ -2,20 +2,19 @@
 title: 🎲 Random
 order: 4
 ---
+{% assign visitablePrompts = collections.prompt | prompt-visitable %}
 <noscript>
-    <div class="info">
-        It seems you have JavaScript disabled...<br>
-        The "random prompt" feature requires it to work.
-    </div>
-    <hr/>
+	<div class="info">
+		It seems you have JavaScript disabled...<br>
+		The "random prompt" feature requires it to work.
+	</div>
+	<hr/>
 </noscript>
 <script>
 	const prompts = [
-        {% for prompt in collections.prompt %}
-        {% if prompt.url != false %}
+		{% for prompt in visitablePrompts %}
 		'{{ prompt.url }}',
-        {% endif %}
-        {% endfor %}
+		{% endfor %}
 	];
 
 	window.location.href = randomChoice(prompts);
