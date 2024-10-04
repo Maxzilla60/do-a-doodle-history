@@ -1,7 +1,7 @@
-const { EleventyRenderPlugin } = require('@11ty/eleventy');
-const markdownIt = require('markdown-it');
+import markdownIt from 'markdown-it';
+import { EleventyRenderPlugin } from '@11ty/eleventy';
 
-module.exports = (eleventy) => {
+export default (eleventy) => {
 	// Add render plugin
 	eleventy.addPlugin(EleventyRenderPlugin);
 	// Add static files
@@ -28,7 +28,7 @@ module.exports = (eleventy) => {
 	eleventy.addFilter('prompt-visitable', filterVisitable);
 	eleventy.addFilter('prompt-calendar-group', groupPromptsForCalendar);
 	eleventy.addFilter('prompt-table-group', groupPromptsForTable);
-};
+}
 
 function sortByOrderField(tagName) {
 	return function (collection) {
