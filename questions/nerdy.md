@@ -1,6 +1,12 @@
----
-title: What are the nerdy details of this website?
-order: 4
+---js
+{
+title: 'What are the nerdy details of this website?',
+order: 4,
+buildDate: new Intl.DateTimeFormat(
+'en-US',
+{ dateStyle: 'full' },
+).format(new Date()),
+}
 ---
 - A static site built with [Eleventy](https://www.11ty.dev)
 - Hosted for free on [Netlify](https://netlify.com)

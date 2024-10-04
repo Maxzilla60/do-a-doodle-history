@@ -10,13 +10,6 @@ export default (eleventy) => {
 	eleventy.setLibrary('md', markdownIt({
 		linkify: true,
 	}));
-	// Add build date to global config
-	eleventy.addGlobalData('buildDate', () => {
-		return new Intl.DateTimeFormat(
-			'en-US',
-			{ dateStyle: 'full' },
-		).format(new Date());
-	});
 	// Custom sorting for pages (nav) collection
 	eleventy.addCollection('nav', sortByOrderField('nav'));
 	// Custom sorting for questions (faq) collection
